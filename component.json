@@ -1,0 +1,11 @@
+{
+  "name": "overlay",
+  "main": "index.scss",
+  "version": "0.1.0",
+  "dependencies": {},
+  "styles": ["index.scss"],
+  "files": [
+    "images/ajax-loader.gif",
+    "images/white-80.png"
+  ]
+}

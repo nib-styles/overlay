@@ -1,0 +1,62 @@
+.overlay {
+  @include transition(opacity 100ms ease-in-out());
+  background: #fff no-repeat center 200px;
+  background-color: rgba(#fff, 0.8);
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 10000;
+  opacity: 1;
+
+  .no-rgba & {
+    background-color: transparent;
+    background-image: component-url("nib-styles-overlay", 'images/white-80.png');
+    background-repeat: repeat;
+    background-position: 0 0;
+  }
+
+  &.is-inactive {
+    opacity: 0;
+    .no-opacity & {
+      display: none;
+    }
+  }
+
+  &.is-loading {
+    background-image: component-url("nib-styles-overlay", 'images/ajax-loader.gif'); 
+
+    .no-rgba & {
+      background-image: component-url("nib-styles-overlay", 'images/white-80.png');
+      background-repeat: repeat;
+      background-position: 0 0;
+
+      &:after {
+        background-image: component-url("nib-styles-overlay", 'images/ajax-loader.gif');
+        content: '';
+        display: block;
+        height: 32px;
+        left: 50%;
+        position: absolute;
+        top: 200px;
+        width: 32px;
+      }
+    }
+  }
+
+  &.is-transparent {
+    background: none;
+    background-color: none;
+    &:after {
+      display: none;
+    }
+  }
+
+  .no-rgba &.is-transparent {
+    background: none;
+    &:after {
+      display:none;
+    }
+  }
+}
