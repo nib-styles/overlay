@@ -1,0 +1,77 @@
+.overlay {
+  transition: opacity 100ms ease-in-out;
+  background: #fff no-repeat center 200px;
+  background-color: rgba(255, 255, 255, 0.8);
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 10000;
+  opacity: 1;
+}
+
+.no-rgba .overlay {
+  background-color: transparent;
+  background-image: url("images/white-80.png");
+  background-repeat: repeat;
+  background-position: 0 0;
+}
+
+/**
+ * Inactive state
+ */
+
+.overlay.is-inactive {
+  opacity: 0;
+}
+
+.no-opacity .overlay.is-inactive {
+  display: none;
+}
+
+/**
+ * Loading state
+ */
+
+.overlay.is-loading {
+  background-image: url("images/ajax-loader.gif");
+}
+
+.no-rgba .overlay.is-loading {
+  background-image: url("images/white-80.png");
+  background-repeat: repeat;
+  background-position: 0 0;
+}
+
+.no-rgba .overlay.is-loading:after {
+  background-image: url("images/ajax-loader.gif");
+  content: '';
+  display: block;
+  height: 32px;
+  left: 50%;
+  position: absolute;
+  top: 200px;
+  width: 32px;
+}
+
+/**
+ * Transparent Overlay
+ */
+
+.overlay.is-transparent {
+  background: none;
+  background-color: none;
+}
+
+.overlay.is-transparent:after {
+  display: none;
+}
+
+.no-rgba .overlay.is-transparent {
+  background: none;
+}
+
+.no-rgba .overlay.is-transparent:after {
+  display: none;
+}
